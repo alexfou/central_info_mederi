@@ -1,4 +1,15 @@
 CentralInfoMederi::Application.routes.draw do
+
+  get "sessions/create"
+
+  get "sessions/destroy"
+
+  get "static_pages/home"
+
+  root to: 'static_pages#home'
+
+  resources :sessions, only: [:create, :destroy]
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

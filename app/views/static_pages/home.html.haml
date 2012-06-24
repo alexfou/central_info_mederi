@@ -1,0 +1,15 @@
+%h1 Ingrese con su usuario
+
+- flash.each do |key, value|
+  = value
+
+-# post method for sessions_path will call create method
+= form_tag sessions_path, :method => :post, :id => 'log_in_form' do
+
+  = label_tag 'email', 'Correo electrónico'
+  = text_field_tag 'email', ""
+
+  = label_tag 'password', 'Contraseña'
+  = password_field_tag 'password', ""
+
+  = submit_tag "Log in!", :id => "log_in_submit"
