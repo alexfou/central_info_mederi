@@ -1,11 +1,29 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.3'
+gem 'bcrypt-ruby'
+gem 'bootstrap-sass'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
+group :development, :test do
+  gem 'sqlite3'
+  #gem 'ruby-debug' not working
+  gem 'cucumber-rails'
+  gem 'cucumber-rails-training-wheels'
+  gem 'rspec-rails'
+  gem 'database_cleaner'
+  gem 'capybara'
+  gem 'launchy'
+  gem 'guard-spork'
+  gem 'spork'
+  gem 'ZenTest'
+  gem 'simplecov', :require => false
+end
 
-gem 'sqlite3'
+group :production do
+  gem 'pg'
+end
 
 
 # Gems used only for assets and not required
@@ -27,6 +45,16 @@ gem 'jquery-rails'
 
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'
+
+# Use unicorn as the app server
+# gem 'unicorn'
+
+# Deploy with Capistrano
+# gem 'capistrano'
+
+# To use debugger
+# gem 'ruby-debug19', :require => 'ruby-debug'
+gem 'haml'
 
 # Use unicorn as the app server
 # gem 'unicorn'
